@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meme Maker</title>
+    
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+    
+<header id="header">
+    <div class="container">
+        <a href="#" class="brand">Meme
+            <img src="img/smile.svg" alt="Meme Maker Logo" class="mx-2">
+            Maker</a>
+        <a href="#" target="_blank" class="author">by <strong>Lusca Lima</strong></a>
+    </div>
+</header>
+
+<section id="maker" class="mt-3">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="row">
+                    <div class="maker-board col-sm-3">
+                        <div class="content">
+                            <div class="m-field mb-3">
+                                <label for="m-url">URL da imagem:</label>
+                                <input type="text" id="m-url">
+                            </div>
+                            <div class="m-field mb-3">
+                                <label for="m-topt">Texto de cima:</label>
+                                <textarea id="m-topt" cols="30" rows="5"></textarea>
+                            </div>
+                            <div class="m-field mb-3">
+                                <label for="m-bott">Texto de baixo:</label>
+                                <textarea id="m-bott" cols="30" rows="5"></textarea>
+                            </div>
+                            <a class="m-download" download="mememaker.png" href="">Baixar Meme</a>
+                        </div>
+                    </div>
+                    <div class="maker-view col-sm-9">
+                        <div class="content">
+                            <canvas id="maker-canvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="footer" class="mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p>Trabalho realizado como requisito avaliativo para a disciplina de Multimídia</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/maker.js"></script>
+
+</body>
+</html>

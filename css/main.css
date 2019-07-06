@@ -1,0 +1,195 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+}
+
+article, aside, figcaption, figure, footer, header, main, nav, section {
+  display: block;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a, a:hover, a:focus {
+  text-decoration: none;
+}
+
+/**
+    Estilo personalizado do body.
+*/
+body {
+  background-color: #f5e6cc;
+}
+
+/**
+    Estilo para o cabecalho principal.
+*/
+#header {
+  padding: 1rem 0;
+  background-color: #fccd04;
+  font-family: "Rubik Mono One", sans-serif;
+  box-shadow: 0 0 0.6rem 0 rgba(0, 0, 0, 0.1);
+}
+#header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#header .brand {
+  display: flex;
+  align-items: center;
+  color: #a64ac9;
+  font-size: 1.5em;
+}
+#header .brand > img {
+  width: 5rem;
+}
+#header .author {
+  color: #a64ac9;
+  font-family: "Roboto Mono", sans-serif;
+  transform-origin: top center;
+  animation-name: swing;
+}
+#header .author:hover {
+  animation-duration: 1s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}
+
+/**
+    Estilo para a área de painel de controle e exibição do resultado.
+*/
+#maker {
+  position: relative;
+}
+#maker [class*=col-sm-] {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+#maker .maker-board, #maker .maker-view {
+  background-color: #f8f8f8;
+}
+#maker .maker-board {
+  color: #333333;
+  font-family: "Roboto Mono", sans-serif;
+}
+#maker .maker-board .m-download {
+  display: block;
+  width: 100%;
+  height: 2.5rem;
+  color: #fff;
+  background-color: #17e9e0;
+  border: 2px solid transparent;
+  border-radius: 1.5rem;
+  font-family: "Roboto Mono", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 2.1;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+#maker .maker-board .m-download:hover {
+  color: #17e9e0;
+  background-color: transparent;
+  border-color: #17e9e0;
+}
+
+#maker label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+#maker input[type=text], #maker textarea {
+  padding: 1rem 1rem;
+  width: 100%;
+  color: #333333;
+  border: 1px solid #a64ac9;
+  border-radius: 1.5rem;
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 1em;
+  resize: none;
+}
+#maker input[type=text] {
+  padding: 0 1rem !important;
+  height: 2.5rem;
+  line-height: 2.5;
+}
+
+#maker .maker-view .content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+#maker #maker-canvas {
+  position: relative;
+  display: block;
+  margin: auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+/**
+    Estilo do rodapé
+*/
+#footer {
+  padding: 1rem 0;
+  background-color: #17e9e0;
+  color: #f8f8f8;
+  font-family: "Roboto Mono", sans-serif;
+  font-weight: bold;
+  box-shadow: 0 0 0.6rem 0 rgba(0, 0, 0, 0.1);
+}
+
+/**
+    Animações
+*/
+@keyframes swing {
+  20% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+  40% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+  60% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+  80% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+  to {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,242 @@
+// Variáveis
+
+$g80: #333333;
+$g50: #808080;
+$color-1: #a64ac9;
+$color-2: #fccd04;
+$color-3: #ffb48f;
+$color-4: #f5e6cc;
+$color-5: #17e9e0;
+
+$margin-sm: .5rem;
+
+$padding: 1rem;
+$padding-md: 1.5rem;
+$padding-lg: 2.5rem;
+
+$shadow-md: 0 0 .6rem 0 rgba(0, 0, 0, .1);
+
+// Mixins e funções
+
+@mixin google-font($url) {
+    @import url('https://fonts.googleapis.com/css?family=#{$url}&display=swap');
+}
+
+@mixin prefix ($prop, $value) {
+    -webkit-#{$prop}: $value;
+    -moz-#{$prop}: $value;
+    #{$prop}: $value;
+}
+
+// Estilos globais
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+}
+
+article, aside, figcaption, figure, footer, header, main, nav, section {
+  display: block;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a, a:hover, a:focus {
+    text-decoration: none;
+}
+
+
+// Inclusões
+
+@include google-font("Rubik+Mono+One");
+@include google-font("Roboto+Mono");
+
+
+// Estilos locais
+
+/**
+    Estilo personalizado do body.
+*/
+body {
+    background-color: $color-4;
+}
+
+/**
+    Estilo para o cabecalho principal.
+*/
+#header {
+    padding: $padding 0;
+    background-color: $color-2;
+    font-family: "Rubik Mono One", sans-serif;
+    box-shadow: $shadow-md;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .brand {
+        display: flex;
+        align-items: center;
+        color: $color-1;
+        font-size: 1.5em;
+        > img {
+            width: 5rem;
+        }
+    }
+    .author {
+        color: $color-1;
+        font-family: "Roboto Mono", sans-serif;
+        transform-origin: top center;
+        animation-name: swing;
+        &:hover {        
+            animation-duration: 1s;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+        }
+    }
+}
+
+/**
+    Estilo para a área de painel de controle e exibição do resultado.
+*/
+#maker {
+    position: relative;
+    [class*="col-sm-"] {
+        padding: {
+            top: $padding;
+            bottom: $padding;
+        }
+    }
+    .maker-board, .maker-view {
+        background-color: #f8f8f8;
+    }
+    .maker-board {
+        color: $g80;
+        font-family: 'Roboto Mono', sans-serif;
+        // .content {
+        //     // padding: $padding;
+        // }
+        .m-download {
+            display: block;
+            width: 100%;
+            height: 2.5rem;
+            color: #fff;
+            background-color: $color-5;
+            border: 2px solid transparent;
+            border-radius: 1.5rem;
+            font-family: "Roboto Mono", sans-serif;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            line-height: 2.1;
+            cursor: pointer;
+            transition: all .2s linear;
+            &:hover {
+                color: $color-5;
+                background-color: transparent;
+                border-color: $color-5;
+            }
+        }
+    }
+}
+
+#maker {
+    label {
+        display: block;
+        margin-bottom: $margin-sm;
+    }
+    input[type=text], textarea {
+        padding: $padding $padding;
+        width: 100%;
+        color: $g80;
+        border: 1px solid $color-1;
+        border-radius: 1.5rem;
+        font-family: "Roboto Mono", sans-serif;
+        font-size: 1em;
+        resize: none;
+    }
+    input[type=text] {
+        padding: 0 $padding !important;
+        height: 2.5rem;
+        line-height: 2.5;
+    }
+}
+
+#maker {
+    .maker-view {
+        .content {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    #maker-canvas {
+        position: relative;
+        display: block;
+        margin: auto;
+        width: auto;
+        height: auto;
+        max-width: 100%;
+    }
+}
+
+
+/**
+    Estilo do rodapé
+*/
+#footer {
+    padding: $padding 0;
+    background-color: $color-5;
+    color: #f8f8f8;
+    font-family: "Roboto Mono", sans-serif;
+    font-weight: bold;
+    box-shadow: $shadow-md;
+}
+
+
+/**
+    Animações
+*/
+
+@keyframes swing {
+    20% {
+        transform: rotate3d(0, 0, 1, 15deg);
+    } 40% {
+        transform: rotate3d(0, 0, 1, -10deg);
+    } 60% {
+        transform: rotate3d(0, 0, 1, 5deg);
+    } 80% {
+        transform: rotate3d(0, 0, 1, -5deg);
+    } to {
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+}
