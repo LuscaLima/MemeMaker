@@ -90,11 +90,11 @@
             }, 'bottom')
         })
 
-        // meme_download.onclick = () => {
-        //     // console.log(this)
-        //     let image = canvas.toDataURL('image/png')
-        //     meme_download.href = image
-        // }
+        meme_download.onclick = () => {
+            // console.log(this)
+            let image = canvas.toDataURL('image/png')
+            meme_download.href = image
+        }
 
     }
 
